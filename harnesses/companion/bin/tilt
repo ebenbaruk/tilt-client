@@ -1,0 +1,13 @@
+#!/bin/sh
+# Launches the Tilt companion (the table, playable with keys) from a clone, with Bun. Nothing is
+# fetched at run time: the code that runs is the clone's. Run it in a split pane next to the agent.
+set -eu
+
+dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+app="$dir/../tilt.ts"
+
+if command -v bun >/dev/null 2>&1; then
+  exec bun "$app" "$@"
+fi
+echo "tilt: install Bun (https://bun.sh) to run the companion." >&2
+exit 1

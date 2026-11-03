@@ -1,0 +1,43 @@
+{
+  "name": "tilt",
+  "version": "0.1.0",
+  "description": "Tilt: play blackjack, roulette, baccarat and slots in a pane while your agent works. Reads only turn start/end events.",
+  "author": {
+    "name": "Tilt"
+  },
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "apiUrl": {
+      "type": "string",
+      "title": "Tilt API URL",
+      "description": "Base URL of the Tilt API. Change it only for local development, e.g. http://127.0.0.1:8080.",
+      "default": "https://api.tilt.example"
+    },
+    "layout": {
+      "type": "string",
+      "title": "Tilt layout",
+      "description": "side: a pane beside the transcript in fullscreen, under it otherwise. bottom: the whole table above the prompt. compact: two lines above the prompt. Preview them with /tilt setup.",
+      "options": ["side", "bottom", "compact"],
+      "default": "side"
+    },
+    "cards": {
+      "type": "string",
+      "title": "Tilt cards",
+      "description": "large: the five-row cards, small ones where they would not fit. small: one row per card.",
+      "options": ["large", "small"],
+      "default": "large"
+    },
+    "autoOpen": {
+      "type": "boolean",
+      "title": "Open Tilt when the agent starts",
+      "description": "Open the pane (or fill the band) when a turn starts, without taking the keyboard.",
+      "default": true
+    },
+    "sound": {
+      "type": "boolean",
+      "title": "Tilt sounds",
+      "description": "A short sound when cards are dealt and when you win. Off by default.",
+      "default": false
+    }
+  }
+}

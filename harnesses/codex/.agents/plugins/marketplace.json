@@ -1,0 +1,20 @@
+{
+  "name": "tilt-local",
+  "interface": {
+    "displayName": "Tilt (local clone)"
+  },
+  "plugins": [
+    {
+      "name": "tilt",
+      "source": {
+        "source": "local",
+        "path": "./plugin"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

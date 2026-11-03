@@ -1,0 +1,31 @@
+{
+  "name": "tilt",
+  "version": "0.1.0",
+  "description": "Tells the Tilt companion when a Kimi Code turn starts and ends. Never reads prompts or replies.",
+  "interface": {
+    "displayName": "Tilt",
+    "shortDescription": "Turn signal for the Tilt companion"
+  },
+  "hooks": [
+    {
+      "event": "TurnStarted",
+      "command": "\"<TILT_DIR>/harnesses/companion/bin/tilt-signal\" working",
+      "timeout": 5
+    },
+    {
+      "event": "Stop",
+      "command": "\"<TILT_DIR>/harnesses/companion/bin/tilt-signal\" idle",
+      "timeout": 5
+    },
+    {
+      "event": "Interrupt",
+      "command": "\"<TILT_DIR>/harnesses/companion/bin/tilt-signal\" idle",
+      "timeout": 5
+    },
+    {
+      "event": "StopFailure",
+      "command": "\"<TILT_DIR>/harnesses/companion/bin/tilt-signal\" idle",
+      "timeout": 5
+    }
+  ]
+}

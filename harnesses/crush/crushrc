@@ -1,0 +1,5 @@
+# Append to ~/.config/crush/crushrc (global: absolute paths required).
+hook add TurnStart --name "tilt-working" --command "<TILT_DIR>/harnesses/companion/bin/tilt-signal working" --timeout 5
+hook add TurnEnd --name "tilt-idle" --command "<TILT_DIR>/harnesses/companion/bin/tilt-signal idle" --timeout 5
+hook add Interrupt --name "tilt-idle-interrupt" --command "<TILT_DIR>/harnesses/companion/bin/tilt-signal idle" --timeout 5
+hook add StopFailure --name "tilt-idle-failure" --command "<TILT_DIR>/harnesses/companion/bin/tilt-signal idle" --timeout 5

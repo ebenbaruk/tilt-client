@@ -1,0 +1,5 @@
+# Append to ~/.aider.conf.yml. Aider runs the command (through the shell)
+# when the LLM has finished and aider waits for your input. Both keys are
+# needed: aider ignores notifications_command unless notifications is true.
+notifications: true
+notifications_command: '"<TILT_DIR>/harnesses/companion/bin/tilt-signal" idle'

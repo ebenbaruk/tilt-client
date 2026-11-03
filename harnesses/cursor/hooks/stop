@@ -1,0 +1,4 @@
+#!/bin/sh
+# Never reads stdin. Used for both stop (completed, aborted or error) and sessionEnd.
+"$(dirname "$0")/../../companion/bin/tilt-signal" idle </dev/null >/dev/null 2>&1
+printf '{}\n'

@@ -1,0 +1,5 @@
+{
+  "name": "tilt",
+  "version": "0.1.0",
+  "description": "Tells the Tilt companion when a Gemini CLI turn starts and ends. Never reads prompts or replies."
+}

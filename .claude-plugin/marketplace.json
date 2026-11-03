@@ -1,0 +1,14 @@
+{
+  "name": "tilt",
+  "owner": {
+    "name": "Tilt"
+  },
+  "description": "Tilt: a casino to play inside your coding agent while it works.",
+  "plugins": [
+    {
+      "name": "tilt",
+      "source": "./apps/mod",
+      "description": "Play twelve casino games in a pane while your agent works."
+    }
+  ]
+}

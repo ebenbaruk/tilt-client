@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "hooks": {
+    "beforeSubmitPrompt": [{ "command": "<TILT_DIR>/harnesses/cursor/hooks/before-submit-prompt", "timeout": 5 }],
+    "stop": [{ "command": "<TILT_DIR>/harnesses/cursor/hooks/stop", "timeout": 5 }],
+    "sessionEnd": [{ "command": "<TILT_DIR>/harnesses/cursor/hooks/stop", "timeout": 5 }]
+  }
+}

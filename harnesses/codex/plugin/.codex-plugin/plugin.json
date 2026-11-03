@@ -1,0 +1,12 @@
+{
+  "name": "tilt",
+  "version": "0.1.0",
+  "description": "Tells the Tilt companion when a Codex turn starts and ends. Never reads prompts or replies.",
+  "hooks": "./hooks/hooks.json",
+  "interface": {
+    "displayName": "Tilt",
+    "shortDescription": "Turn signal for the Tilt companion",
+    "developerName": "Tilt",
+    "category": "Productivity"
+  }
+}

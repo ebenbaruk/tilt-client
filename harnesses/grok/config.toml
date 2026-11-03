@@ -1,0 +1,7 @@
+# Append to ~/.grok/config.toml (user config only: a repository cannot set it).
+# refresh_interval re-runs the script while the session is idle, so bets you
+# play in the companion show up without waiting for the next turn.
+[ui.status_line]
+type = "command"
+command = "<TILT_DIR>/harnesses/companion/bin/tilt-status"
+refresh_interval = 5

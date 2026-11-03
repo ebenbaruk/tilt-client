@@ -1,0 +1,6 @@
+{
+  "statusLine": {
+    "type": "command",
+    "command": "<TILT_DIR>/harnesses/companion/bin/tilt-status"
+  }
+}

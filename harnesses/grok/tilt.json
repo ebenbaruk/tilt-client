@@ -1,0 +1,23 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      { "hooks": [{ "type": "command", "command": "\"<TILT_DIR>/harnesses/companion/bin/tilt-signal\" working" }] }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          { "type": "command", "command": "\"<TILT_DIR>/harnesses/companion/bin/tilt-signal\" idle", "timeout": 5 }
+        ]
+      }
+    ],
+    "StopFailure": [
+      { "hooks": [{ "type": "command", "command": "\"<TILT_DIR>/harnesses/companion/bin/tilt-signal\" idle" }] }
+    ],
+    "StopCancelled": [
+      { "hooks": [{ "type": "command", "command": "\"<TILT_DIR>/harnesses/companion/bin/tilt-signal\" idle" }] }
+    ],
+    "SessionEnd": [
+      { "hooks": [{ "type": "command", "command": "\"<TILT_DIR>/harnesses/companion/bin/tilt-signal\" idle" }] }
+    ]
+  }
+}

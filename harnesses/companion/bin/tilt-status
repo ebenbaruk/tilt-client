@@ -1,0 +1,12 @@
+#!/bin/sh
+# Prints the one-line Tilt status the companion last wrote, for harness status lines.
+# Never reads stdin (some harnesses pipe session data there) and always exits 0.
+exec </dev/null
+
+file="$HOME/.tilt/status.txt"
+if [ -n "$HOME" ] && [ -r "$file" ]; then
+  IFS= read -r line <"$file" && printf '%s\n' "$line" && exit 0
+fi
+dir=$(dirname "$0")
+printf 'TILT · run %s/tilt\n' "$dir"
+exit 0

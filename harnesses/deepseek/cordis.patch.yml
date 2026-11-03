@@ -1,0 +1,9 @@
+# Tilt's dsh bundle layer: mounts the plugin once, at the root, so it sees every agent's
+# running/idle status. The API URL comes from TILT_API_URL; to set it here instead, override
+# this row in your profile's cordis.patch.yml:
+#   - id: tilt
+#     config:
+#       apiUrl: https://your-tilt-api.example
+- insert:
+    - id: tilt
+      name: "@tilt/dsh"

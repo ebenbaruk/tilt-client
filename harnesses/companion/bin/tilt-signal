@@ -1,0 +1,27 @@
+#!/bin/sh
+# Records the coding agent's turn for the Tilt companion: tilt-signal <working|idle> [--json]
+# Called from harness turn hooks. It never reads stdin (stdin carries the user's prompt), writes
+# only ~/.tilt/agent.json, and always exits 0 so a hook can never block the agent.
+exec </dev/null
+
+state=$1
+case "$state" in
+  working | idle) ;;
+  *) state= ;;
+esac
+
+if [ -n "$state" ] && [ -n "$HOME" ]; then
+  dir="$HOME/.tilt"
+  tmp="$dir/agent.json.$$.tmp"
+  (
+    umask 077
+    mkdir -p "$dir" &&
+      printf '{"state":"%s","at":%s}\n' "$state" "$(date +%s)" >"$tmp" &&
+      mv -f "$tmp" "$dir/agent.json"
+  ) >/dev/null 2>&1 || rm -f "$tmp" >/dev/null 2>&1
+fi
+
+if [ "$2" = "--json" ]; then
+  printf '{}\n'
+fi
+exit 0

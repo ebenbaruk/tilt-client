@@ -1,0 +1,5 @@
+#!/bin/sh
+# Cursor pipes the user's prompt on stdin: never read it (spec §10).
+# Cursor expects {"continue": true} or the prompt may be held back.
+"$(dirname "$0")/../../companion/bin/tilt-signal" working </dev/null >/dev/null 2>&1
+printf '{"continue":true}\n'

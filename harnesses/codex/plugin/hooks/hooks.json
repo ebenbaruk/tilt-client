@@ -1,0 +1,38 @@
+{
+  "description": "Tilt: mark the agent working/idle for the Tilt companion. tilt-signal never reads stdin.",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"<TILT_DIR>/harnesses/companion/bin/tilt-signal\" working",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"<TILT_DIR>/harnesses/companion/bin/tilt-signal\" idle --json",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "Interrupt": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"<TILT_DIR>/harnesses/companion/bin/tilt-signal\" idle",
+            "timeout": 2
+          }
+        ]
+      }
+    ]
+  }
+}

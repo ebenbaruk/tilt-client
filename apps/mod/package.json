@@ -1,0 +1,15 @@
+{
+  "name": "@tilt/mod",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./protocol": "./hooks/protocol.ts"
+  },
+  "scripts": {
+    "typecheck": "[ -f .claude-plugin/types/claude-code/index.d.ts ] || { echo \"skip: load the mod once in Claude Code (claude --plugin-dir apps/mod) to lay its types\"; exit 0; }; tsc --noEmit -p tsconfig.json",
+    "test": "claude plugin validate . && claude plugin test ."
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}

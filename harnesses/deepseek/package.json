@@ -1,0 +1,13 @@
+{
+  "name": "@tilt/dsh",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Tilt for DeepSeek Harness: play the Tilt table while the agent works",
+  "type": "module",
+  "main": "index.mjs",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

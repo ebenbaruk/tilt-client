@@ -1,0 +1,30 @@
+# Append to ~/.codewhale/config.toml. If it already has a [hooks] table, keep
+# yours (with enabled = true) and only add the [[hooks.hooks]] entries.
+# session_busy / session_idle / waiting_for_user / session_error carry no
+# prompt or reply text, only the state transition.
+[hooks]
+enabled = true
+
+[[hooks.hooks]]
+name = "tilt-working"
+event = "session_busy"
+command = "\"<TILT_DIR>/harnesses/companion/bin/tilt-signal\" working"
+timeout_secs = 5
+
+[[hooks.hooks]]
+name = "tilt-idle"
+event = "session_idle"
+command = "\"<TILT_DIR>/harnesses/companion/bin/tilt-signal\" idle"
+timeout_secs = 5
+
+[[hooks.hooks]]
+name = "tilt-waiting"
+event = "waiting_for_user"
+command = "\"<TILT_DIR>/harnesses/companion/bin/tilt-signal\" idle"
+timeout_secs = 5
+
+[[hooks.hooks]]
+name = "tilt-error"
+event = "session_error"
+command = "\"<TILT_DIR>/harnesses/companion/bin/tilt-signal\" idle"
+timeout_secs = 5
